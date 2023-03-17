@@ -7,4 +7,4 @@
 - [x] Criação dos campos de dados
 - [x] Botões para navegação
 - [x] Customização do Layout
-
+- [x] Model View Controllew (Padrão MVC)
