@@ -1,4 +1,4 @@
 package devandroid.gkp.applistacurso.model;
 
-public class Curso {
+public class Pessoa {
 }
