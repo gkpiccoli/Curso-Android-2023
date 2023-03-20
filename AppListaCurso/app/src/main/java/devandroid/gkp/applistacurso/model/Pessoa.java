@@ -8,8 +8,8 @@ public class Pessoa {
     //
 
     private String primeiroNome;
-    private String sobreNome;
-    private String CursoDesejado;
+    private String sobrenome;
+    private String cursoDesejado;
     private String telefoneContato;
 
     public String getPrimeiroNome() {
@@ -20,20 +20,20 @@ public class Pessoa {
         this.primeiroNome = primeiroNome;
     }
 
-    public String getSobreNome() {
-        return sobreNome;
+    public String getSobrenome() {
+        return sobrenome;
     }
 
-    public void setSobreNome(String sobreNome) {
-        this.sobreNome = sobreNome;
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
     }
 
     public String getCursoDesejado() {
-        return CursoDesejado;
+        return cursoDesejado;
     }
 
     public void setCursoDesejado(String cursoDesejado) {
-        CursoDesejado = cursoDesejado;
+        this.cursoDesejado = cursoDesejado;
     }
 
     public String getTelefoneContato() {
