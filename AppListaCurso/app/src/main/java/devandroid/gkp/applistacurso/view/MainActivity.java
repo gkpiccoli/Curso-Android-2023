@@ -12,6 +12,8 @@ public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa;
 
+    String dadosPessoa;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,5 +24,16 @@ public class MainActivity extends AppCompatActivity {
         pessoa.setSobreNome("Kureck");
         pessoa.setCursoDesejado("Android");
         pessoa.setTelefoneContato("49-9900112233");
+
+        dadosPessoa = "Primeiro nome: ";
+        dadosPessoa += pessoa.getPrimeiroNome();
+        dadosPessoa += "Sobrenome: ";
+        dadosPessoa += pessoa.getSobreNome();
+        dadosPessoa += "Curso Desejado: ";
+        dadosPessoa += pessoa.getCursoDesejado();
+        dadosPessoa += "Telefone de contato: ";
+        dadosPessoa += pessoa.getTelefoneContato();
+
+        int parada = 0;
     }
 }
