@@ -12,3 +12,12 @@
 - [x] Model View Controllew (Padrão MVC)
 - [x] Métodos Getter e Setter
 - [x] Usar o modo Debug do Android Studio
+
+
+
+
+
+
+### Preview
+
+![screenshot](https://github.com/gkpiccoli/Curso-Android-2023/blob/main/Screenshot_20230321_164456.png)
