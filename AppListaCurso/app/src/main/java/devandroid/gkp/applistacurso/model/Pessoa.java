@@ -4,12 +4,12 @@ public class Pessoa {
 
     //Construtor
     //Atributos - Objetos - Molde - Modelo - Template - letraMinuscula
-    //Métodos de Acesso - Getters n Setters
+    //Métodos de Acesso - Getters n Setters -
     //
 
     private String primeiroNome;
-    private String sobrenome;
-    private String cursoDesejado;
+    private String sobreNome;
+    private String CursoDesejado;
     private String telefoneContato;
 
     public String getPrimeiroNome() {
@@ -20,20 +20,20 @@ public class Pessoa {
         this.primeiroNome = primeiroNome;
     }
 
-    public String getSobrenome() {
-        return sobrenome;
+    public String getSobreNome() {
+        return sobreNome;
     }
 
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
+    public void setSobreNome(String sobreNome) {
+        this.sobreNome = sobreNome;
     }
 
     public String getCursoDesejado() {
-        return cursoDesejado;
+        return CursoDesejado;
     }
 
     public void setCursoDesejado(String cursoDesejado) {
-        this.cursoDesejado = cursoDesejado;
+        CursoDesejado = cursoDesejado;
     }
 
     public String getTelefoneContato() {
