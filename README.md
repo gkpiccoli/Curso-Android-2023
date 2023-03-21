@@ -11,4 +11,4 @@
 - [x] Customização do Layout
 - [x] Model View Controllew (Padrão MVC)
 - [x] Métodos Getter e Setter
-- [x] Usar o modo Debugh do Android Studio
+- [x] Usar o modo Debug do Android Studio
