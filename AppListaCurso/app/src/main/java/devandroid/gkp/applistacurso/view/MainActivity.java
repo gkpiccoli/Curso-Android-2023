@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         dadosPessoa += "Telefone de contato: ";
         dadosPessoa += pessoa.getTelefoneContato();
 
+
         int parada = 0;
     }
 }
