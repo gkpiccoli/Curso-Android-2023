@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         pessoa.setCursoDesejado("Android");
         pessoa.setTelefoneContato("49-9900112233");
 
-        dadosPessoa = "Primeiro nome: ";
+       /* dadosPessoa = "Primeiro nome: ";
         dadosPessoa += pessoa.getPrimeiroNome();
         dadosPessoa += "Sobrenome: ";
         dadosPessoa += pessoa.getSobreNome();
@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         dadosPessoa += pessoa.getCursoDesejado();
         dadosPessoa += "Telefone de contato: ";
         dadosPessoa += pessoa.getTelefoneContato();
+*/
 
-
-        Log.i("POOAndroid", pessoa.toString());
+        Log.i("POOAndroid","Objeto pessoa: " + pessoa.toString());
     }
 }
