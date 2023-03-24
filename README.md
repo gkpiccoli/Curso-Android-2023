@@ -12,6 +12,7 @@
 - [x] Model View Controllew (Padrão MVC)
 - [x] Métodos Getter e Setter
 - [x] Usar o modo Debug do Android Studio
+- [ ] LogCat
 
 
 
