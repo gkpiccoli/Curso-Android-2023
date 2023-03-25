@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa;
 
-    String dadosPessoa;
+   // String dadosPessoa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
