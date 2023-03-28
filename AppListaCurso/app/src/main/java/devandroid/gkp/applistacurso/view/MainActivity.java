@@ -17,6 +17,16 @@ public class MainActivity extends AppCompatActivity {
 
    // String dadosPessoa;
 
+    EditText editNome;
+    EditText editSobrenome;
+    EditText editTelefone;
+    EditText editCursoDesejado;
+
+
+    Button btnSalvar;
+    Button btnFinalizar;
+    Button btnLimpar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,15 +38,19 @@ public class MainActivity extends AppCompatActivity {
         pessoa.setCursoDesejado("Android");
         pessoa.setTelefoneContato("49-9900112233");
 
+        editNome = findViewById(R.id.editNome);
+        editSobrenome = findViewById(R.id.editSobrenome);
+        editTelefone = findViewById(R.id.editTelefone);
+        editCursoDesejado = findViewById(R.id.editCursoDesejado);
 
-        EditText editNome;
-        EditText editSobrenome;
-        EditText editTelefone;
-        EditText editCursoDesejado;
+        btnLimpar = findViewById(R.id.btnLimpar);
+        btnSalvar = findViewById(R.id.btnSalvar);
+        btnFinalizar = findViewById(R.id.btnFinalizar);
 
-        Button btnSalvar;
-        Button btnFinalizar;
-        Button btnLimpar;
+        editNome.setText(pessoa.getPrimeiroNome());
+        editSobrenome.setText(pessoa.getSobreNome());
+        editTelefone.setText(pessoa.getTelefoneContato());
+        editCursoDesejado.setText(pessoa.getCursoDesejado());
 
 
        /* dadosPessoa = "Primeiro nome: ";
