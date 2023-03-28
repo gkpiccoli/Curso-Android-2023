@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.EditText;
 
 import devandroid.gkp.applistacurso.R;
@@ -31,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
         EditText editNome;
         EditText editSobrenome;
         EditText editTelefone;
+        EditText editCursoDesejado;
+
+        Button btnSalvar;
+        Button btnFinalizar;
+        Button btnLimpar;
 
 
        /* dadosPessoa = "Primeiro nome: ";
