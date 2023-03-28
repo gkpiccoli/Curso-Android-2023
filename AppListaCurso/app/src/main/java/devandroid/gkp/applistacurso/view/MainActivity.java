@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.EditText;
 
 import devandroid.gkp.applistacurso.R;
 import devandroid.gkp.applistacurso.model.Pessoa;
@@ -25,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
         pessoa.setSobreNome("Kureck");
         pessoa.setCursoDesejado("Android");
         pessoa.setTelefoneContato("49-9900112233");
+
+
+        EditText editNome;
+        EditText editSobrenome;
+        EditText editTelefone;
+
 
        /* dadosPessoa = "Primeiro nome: ";
         dadosPessoa += pessoa.getPrimeiroNome();
