@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
+
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -53,14 +53,11 @@ public class MainActivity extends AppCompatActivity {
         editTelefone.setText(pessoa.getTelefoneContato());
         editCursoDesejado.setText(pessoa.getCursoDesejado());
 
-        btnLimpar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editNome.setText("");
-                editSobrenome.setText("");
-                editTelefone.setText("");
-                editCursoDesejado.setText("");
-            }
+        btnLimpar.setOnClickListener(v -> {
+            editNome.setText("");
+            editSobrenome.setText("");
+            editTelefone.setText("");
+            editCursoDesejado.setText("");
         });
 
 
