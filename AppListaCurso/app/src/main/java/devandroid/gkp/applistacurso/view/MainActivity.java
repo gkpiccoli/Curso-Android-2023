@@ -7,6 +7,7 @@ import android.util.Log;
 
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import devandroid.gkp.applistacurso.R;
 import devandroid.gkp.applistacurso.model.Pessoa;
@@ -34,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         pessoa = new Pessoa();
-        pessoa.setPrimeiroNome("Gustavo");
-        pessoa.setSobreNome("Kureck");
-        pessoa.setCursoDesejado("Android");
-        pessoa.setTelefoneContato("49-9900112233");
+//        pessoa.setPrimeiroNome("Gustavo");
+//        pessoa.setSobreNome("Kureck");
+//        pessoa.setCursoDesejado("Android");
+//        pessoa.setTelefoneContato("49-9900112233");
 
         editNome = findViewById(R.id.editNome);
         editSobrenome = findViewById(R.id.editSobrenome);
@@ -58,6 +59,20 @@ public class MainActivity extends AppCompatActivity {
             editSobrenome.setText("");
             editTelefone.setText("");
             editCursoDesejado.setText("");
+        });
+
+        btnFinalizar.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this,"Volte Sempre", Toast.LENGTH_LONG).show();
+            finish();
+        });
+
+        btnSalvar.setOnClickListener(v -> {
+            pessoa.setPrimeiroNome(editNome.getText().toString());
+            pessoa.setSobreNome(editSobrenome.getText().toString());
+            pessoa.setTelefoneContato(editTelefone.getText().toString());
+            pessoa.setCursoDesejado(editCursoDesejado.getText().toString());
+            Toast.makeText(MainActivity.this,"Salvo "+pessoa.toString(), Toast.LENGTH_LONG).show();
+
         });
 
 
