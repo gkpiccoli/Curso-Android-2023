@@ -2,6 +2,7 @@ package devandroid.gkp.applistacurso.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -14,6 +15,9 @@ import devandroid.gkp.applistacurso.controller.PessoaController;
 import devandroid.gkp.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
+
+    SharedPreferences preferences;
+    public static final String NOME_PREFERENCES = "pref_lista";
 
     PessoaController controller;
     Pessoa pessoa;
@@ -31,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        preferences = getSharedPreferences(NOME_PREFERENCES,0);
+        SharedPreferences.Editor listaInscricao = preferences.edit();
 
         controller = new PessoaController();
         controller.toString();
@@ -70,6 +77,12 @@ public class MainActivity extends AppCompatActivity {
             pessoa.setCursoDesejado(editCursoDesejado.getText().toString());
             Toast.makeText(MainActivity.this,"Salvo "+pessoa.toString(), Toast.LENGTH_LONG).show();
 
+
+            listaInscricao.putString("Nome", pessoa.getPrimeiroNome());
+            listaInscricao.putString("Sobrenome", pessoa.getSobreNome());
+            listaInscricao.putString("Telefone", pessoa.getTelefoneContato());
+            listaInscricao.putString("Curso", pessoa.getCursoDesejado());
+            listaInscricao.apply();
 
             controller.salvar(pessoa);
         });
