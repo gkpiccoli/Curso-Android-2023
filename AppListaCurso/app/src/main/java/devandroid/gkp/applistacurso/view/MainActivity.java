@@ -52,12 +52,7 @@ public class MainActivity extends AppCompatActivity {
         btnLimpar = findViewById(R.id.btnLimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
         btnFinalizar = findViewById(R.id.btnFinalizar);
-
-        editNome.setText(pessoa.getPrimeiroNome());
-        editSobrenome.setText(pessoa.getSobreNome());
-        editTelefone.setText(pessoa.getTelefoneContato());
-        editCursoDesejado.setText(pessoa.getCursoDesejado());
-
+        
         btnLimpar.setOnClickListener(v -> {
             editNome.setText("");
             editSobrenome.setText("");
