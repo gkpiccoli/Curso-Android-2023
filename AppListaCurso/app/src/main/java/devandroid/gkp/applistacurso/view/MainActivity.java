@@ -37,23 +37,34 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        SharedPreferences_LimparDados
         preferences = getSharedPreferences(NOME_PREFERENCES,0);
         listaInscricao = preferences.edit();
+
 
         controller = new PessoaController();
         controller.toString();
 
         pessoa = new Pessoa();
+        pessoa.setPrimeiroNome(preferences.getString("Nome", "N/A"));
+        pessoa.setSobreNome(preferences.getString("Sobrenome", "N/A"));
+        pessoa.setTelefoneContato(preferences.getString("Telefone", "N/A"));
+        pessoa.setCursoDesejado(preferences.getString("Curso", "N/A"));
 
         editNome = findViewById(R.id.editNome);
         editSobrenome = findViewById(R.id.editSobrenome);
         editTelefone = findViewById(R.id.editTelefone);
         editCursoDesejado = findViewById(R.id.editCursoDesejado);
 
+        editNome.setText(pessoa.getPrimeiroNome());
+        editSobrenome.setText(pessoa.getSobreNome());
+        editTelefone.setText(pessoa.getTelefoneContato());
+        editCursoDesejado.setText(pessoa.getCursoDesejado());
+
         btnLimpar = findViewById(R.id.btnLimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
         btnFinalizar = findViewById(R.id.btnFinalizar);
-        
+
         btnLimpar.setOnClickListener(v -> {
             editNome.setText("");
             editSobrenome.setText("");
@@ -65,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnFinalizar.setOnClickListener(v -> {
-            Toast.makeText(MainActivity.this,"Volte Sempre", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "Volte Sempre", Toast.LENGTH_LONG).show();
             finish();
         });
 
@@ -74,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             pessoa.setSobreNome(editSobrenome.getText().toString());
             pessoa.setTelefoneContato(editTelefone.getText().toString());
             pessoa.setCursoDesejado(editCursoDesejado.getText().toString());
-            Toast.makeText(MainActivity.this,"Salvo "+pessoa.toString(), Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "Salvo " + pessoa.toString(), Toast.LENGTH_LONG).show();
 
 
             listaInscricao.putString("Nome", pessoa.getPrimeiroNome());
@@ -87,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        Log.i("POOAndroid","Objeto pessoa: " + pessoa.toString());
+        Log.i("POOAndroid", "Objeto pessoa: " + pessoa.toString());
         Log.i("POOAndroid", "Objeto Teste" + pessoa.getClass());
     }
 }
