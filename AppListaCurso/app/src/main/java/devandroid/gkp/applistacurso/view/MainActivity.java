@@ -17,6 +17,7 @@ import devandroid.gkp.applistacurso.model.Pessoa;
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences preferences;
+    SharedPreferences.Editor listaInscricao;
     public static final String NOME_PREFERENCES = "pref_lista";
 
     PessoaController controller;
@@ -36,8 +37,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
-        SharedPreferences.Editor listaInscricao = preferences.edit();
+        SharedPreferences_LimparDados
+        preferences = getSharedPreferences(NOME_PREFERENCES,0);
+        listaInscricao = preferences.edit();
+
 
         controller = new PessoaController();
         controller.toString();
@@ -67,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
             editSobrenome.setText("");
             editTelefone.setText("");
             editCursoDesejado.setText("");
+
+            listaInscricao.clear();
+            listaInscricao.apply();
         });
 
         btnFinalizar.setOnClickListener(v -> {
