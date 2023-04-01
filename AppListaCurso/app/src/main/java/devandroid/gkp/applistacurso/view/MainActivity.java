@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SharedPreferences_LimparDados
         preferences = getSharedPreferences(NOME_PREFERENCES,0);
         listaInscricao = preferences.edit();
 
