@@ -37,18 +37,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        preferences = getSharedPreferences(NOME_PREFERENCES,0);
+        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
         listaInscricao = preferences.edit();
 
 
-        controller = new PessoaController();
+        controller = new PessoaController(MainActivity.this);
         controller.toString();
 
         pessoa = new Pessoa();
-        pessoa.setPrimeiroNome(preferences.getString("Nome", "N/A"));
-        pessoa.setSobreNome(preferences.getString("Sobrenome", "N/A"));
-        pessoa.setTelefoneContato(preferences.getString("Telefone", "N/A"));
-        pessoa.setCursoDesejado(preferences.getString("Curso", "N/A"));
+        controller.buscar(pessoa);
+//
 
         editNome = findViewById(R.id.editNome);
         editSobrenome = findViewById(R.id.editSobrenome);
@@ -70,8 +68,7 @@ public class MainActivity extends AppCompatActivity {
             editTelefone.setText("");
             editCursoDesejado.setText("");
 
-            listaInscricao.clear();
-            listaInscricao.apply();
+            controller.limpar();
         });
 
         btnFinalizar.setOnClickListener(v -> {
@@ -85,13 +82,6 @@ public class MainActivity extends AppCompatActivity {
             pessoa.setTelefoneContato(editTelefone.getText().toString());
             pessoa.setCursoDesejado(editCursoDesejado.getText().toString());
             Toast.makeText(MainActivity.this, "Salvo " + pessoa.toString(), Toast.LENGTH_LONG).show();
-
-
-            listaInscricao.putString("Nome", pessoa.getPrimeiroNome());
-            listaInscricao.putString("Sobrenome", pessoa.getSobreNome());
-            listaInscricao.putString("Telefone", pessoa.getTelefoneContato());
-            listaInscricao.putString("Curso", pessoa.getCursoDesejado());
-            listaInscricao.apply();
 
             controller.salvar(pessoa);
         });
