@@ -8,11 +8,11 @@
 
 - [x] Criação dos campos de dados
 - [x] Botões para navegação
-- [x] Customização do Layout
+- [x] Criação e customização do Layout
 - [x] Model View Controllew (Padrão MVC)
 - [x] Métodos Getter e Setter
 - [x] Usar o modo Debug do Android Studio
-- [x] SharedPreferences - Salvar dados
+- [x] SharedPreferences - Salvar/Limpar/Buscar
 
 
 
