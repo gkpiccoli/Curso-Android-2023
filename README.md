@@ -13,6 +13,7 @@
 - [x] Métodos Getter e Setter
 - [x] Usar o modo Debug do Android Studio
 - [x] SharedPreferences - Salvar/Limpar/Buscar
+- []
 
 
 
