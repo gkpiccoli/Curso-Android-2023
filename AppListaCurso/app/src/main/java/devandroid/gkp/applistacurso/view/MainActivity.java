@@ -6,11 +6,16 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.List;
+
 import devandroid.gkp.applistacurso.R;
+import devandroid.gkp.applistacurso.controller.CursoController;
 import devandroid.gkp.applistacurso.controller.PessoaController;
 import devandroid.gkp.applistacurso.model.Pessoa;
 
@@ -21,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
     public static final String NOME_PREFERENCES = "pref_lista";
 
     PessoaController controller;
+    CursoController cursoController;
     Pessoa pessoa;
+    List<String> nomesDosCursos;
     EditText editNome;
     EditText editSobrenome;
     EditText editTelefone;
@@ -31,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnSalvar;
     Button btnFinalizar;
     Button btnLimpar;
+
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,14 +53,16 @@ public class MainActivity extends AppCompatActivity {
         controller = new PessoaController(MainActivity.this);
         controller.toString();
 
+
         pessoa = new Pessoa();
         controller.buscar(pessoa);
-//
+
 
         editNome = findViewById(R.id.editNome);
         editSobrenome = findViewById(R.id.editSobrenome);
         editTelefone = findViewById(R.id.editTelefone);
         editCursoDesejado = findViewById(R.id.editCursoDesejado);
+        spinner = findViewById(R.id.spinner);
 
         editNome.setText(pessoa.getPrimeiroNome());
         editSobrenome.setText(pessoa.getSobreNome());
@@ -61,6 +72,13 @@ public class MainActivity extends AppCompatActivity {
         btnLimpar = findViewById(R.id.btnLimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
         btnFinalizar = findViewById(R.id.btnFinalizar);
+
+        cursoController = new CursoController();
+        nomesDosCursos = cursoController.dadosParaSpinner();
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, cursoController.dadosParaSpinner());
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+        spinner.setAdapter(adapter);
 
         btnLimpar.setOnClickListener(v -> {
             editNome.setText("");
